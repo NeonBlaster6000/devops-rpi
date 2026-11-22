@@ -1,0 +1,9 @@
+.env
+*.env
+!.env.example
+*.pem
+*.key
+acme.json
+data/
+volumes/
+backups/
