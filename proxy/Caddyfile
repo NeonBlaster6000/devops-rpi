@@ -1,3 +1,6 @@
 :80 {
-	respond "HTTPS is live on Raspberry Pi 5 the one piece is real!!!" 200
+		handle {
+		root * /srv:site
+		file_server
+	}
 }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thousand Sunny — Raspberry Pi 5 DevOps Setup</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b132b;
+      --card: #16203a;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --gold: #f5b700;
+      --red: #e63946;
+      --ok: #4ade80;
+    }
+    body {
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1c2541 0%, var(--bg) 60%);
+      color: var(--text);
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+      line-height: 1.6;
+    }
+    header {
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    h1 { color: var(--gold); margin-bottom: 0.25rem; }
+    h2 { color: var(--gold); margin-top: 0; }
+    .subtitle { color: var(--muted); margin-top: 0; }
+    .quote {
+      border-left: 4px solid var(--red);
+      padding: 0.5rem 1rem;
+      background: rgba(230, 57, 70, 0.1);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #2a3a5e;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .flow {
+      font-family: monospace;
+      background: #060b19;
+      border: 1px solid #2a3a5e;
+      color: #7dd3fc;
+      padding: 0.9rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    th, td { text-align: left; padding: 0.65rem; border-bottom: 1px solid #2a3a5e; }
+    th { color: var(--gold); }
+    .crew { font-weight: 700; color: #fde047; }
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: #064e3b;
+      color: var(--ok);
+    }
+    .planned { background: #334155; color: var(--muted); }
+    code {
+      background: #060b19;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>&#9760;&#65039; Thousand Sunny — DevOps Raspberry Pi 5</h1>
+    <p class="subtitle">Self-hosted Ubuntu Server (arm64) on a Raspberry Pi 5 (8GB), managed declaratively via Git from NixOS.</p>
+    <div class="quote">"The self-hosted One Piece is real!" — Public HTTPS from a student dorm with zero open router ports.</div>
+  </header>
+
+  <div class="card">
+    <h2>&#129517; Grand Line Navigation (Traffic Flow &amp; Isolation)</h2>
+    <div class="flow">Internet (HTTPS 443) -&gt; Tailscale Funnel -&gt; Caddy (127.0.0.1:8080) -&gt; Isolated Docker Networks</div>
+    <ul>
+      <li><strong>Zoro (UFW Firewall):</strong> Guards the hull by blocking all incoming dorm LAN ports except SSH (<code>22/tcp</code>).</li>
+      <li><strong>Nami (Tailscale Funnel + Caddy):</strong> Navigates around dorm CGNAT and blocked ports, terminating public TLS and routing paths to internal containers.</li>
+      <li><strong>Franky (Docker Hygiene):</strong> Maintains the ship with pinned image versions, JSON log rotation, isolated <code>internal: true</code> database networks, and untracked <code>.env</code> secrets.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>&#9875; Crew Manifest (Hosted Services)</h2>
+    <table>
+      <thead>
+        <tr><th>Crew Member</th><th>Path</th><th>Service</th><th>Purpose</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="crew">Usopp</td>
+          <td><code>/</code></td>
+          <td>Static Info Page</td>
+          <td>Ship's log: architecture overview &amp; service justifications</td>
+          <td><span class="badge">Live</span></td>
+        </tr>
+        <tr>
+          <td class="crew">Nico Robin</td>
+          <td><code>/bookmarks</code></td>
+          <td>Linkding + PostgreSQL</td>
+          <td>Poneglyph archive: study &amp; DevOps bookmarks (isolated DB)</td>
+          <td><span class="badge planned">Planned</span></td>
+        </tr>
+        <tr>
+          <td class="crew">Nami</td>
+          <td><code>/files</code></td>
+          <td>FileBrowser</td>
+          <td>Treasure vault: personal cloud drive for course PDFs &amp; files</td>
+          <td><span class="badge planned">Planned</span></td>
+        </tr>
+        <tr>
+          <td class="crew">Chopper</td>
+          <td><code>/monitoring</code></td>
+          <td>Grafana + Prometheus</td>
+          <td>Ship doctor: live Pi 5 CPU, temperature, RAM &amp; uptime vitals</td>
+          <td><span class="badge planned">Planned</span></td>
+        </tr>
+        <tr>
+          <td class="crew">Monkey D. Luffy</td>
+          <td><code>/app</code></td>
+          <td>Custom Web App</td>
+          <td>Captain's flagship: self-written app deployed via CI/CD</td>
+          <td><span class="badge planned">Planned</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
