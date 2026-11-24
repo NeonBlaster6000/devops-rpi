@@ -4,11 +4,9 @@ services:
     container_name: caddy
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
+      - "127.0.0.1:8080:80"
     environment:
-      - DOMAIN=${DOMAIN}
+      - TZ=${TZ}
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
@@ -23,7 +21,3 @@ volumes:
 networks:
   proxy:
     name: proxy
-
-        
-
-      
