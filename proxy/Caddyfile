@@ -1,6 +1,6 @@
 :80 {
 		handle {
-		root * /srv:site
+		root * /srv/site
 		file_server
 	}
 }
