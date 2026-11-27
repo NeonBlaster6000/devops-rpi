@@ -1,5 +1,4 @@
 server:
-  port: 80
   database:
     path: "/database/filebrowser.sqlite"
   sources:
