@@ -1,0 +1,24 @@
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:v2.31.2
+    container_name: filebrowser
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+      - FB_BASEURL=/files
+      - FB_PORT=80
+      - FB_ROOT=/srv
+      - FB_DATABASE=/database/filebrowser.db
+    volumes:
+      - filebrowser_data:/srv
+      - filebrowser_db:/database
+    networks:
+      - proxy
+
+volumes:
+  filebrowser_data:
+  filebrowser_db:
+
+networks:
+  proxy:
+    external: true

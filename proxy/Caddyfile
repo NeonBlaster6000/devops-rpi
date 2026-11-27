@@ -1,11 +1,17 @@
 :80 {
-		redir /bookmarks /bookmarks/ 308
-		handle /bookmarks/* {
-				reverse_proxy linkding:9090 {
-				header_up X-Forwarded-Proto https
-			}
+	redir /bookmarks /bookmarks/ 308
+	handle /bookmarks/* {
+		reverse_proxy linkding:9090 {
+			header_up X-Forwarded-Proto https
+		}
 	}
-		handle {
+
+	redir /files /files/ 308
+	handle /files/* {
+		reverse_proxy filebrowser:80
+	}
+
+	handle {
 		root * /srv/site
 		file_server
 	}
