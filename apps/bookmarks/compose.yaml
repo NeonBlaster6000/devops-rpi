@@ -1,0 +1,54 @@
+services:
+  linkding:
+    image: sissbruecker/linkding:1.39.0
+    container_name: linkding
+    restart: unless-stopped
+    depends_on:
+      linkding-db:
+        condition: service_healthy
+    environment:
+      - TZ=${TZ}
+      - LD_CONTEXT_PATH=bookmarks/
+      - LD_CSRF_TRUSTED_ORIGINS=https://${TS_DOMAIN}
+      - LD_SUPERUSER_NAME=${LINKDING_SUPERUSER_NAME}
+      - LD_SUPERUSER_PASSWORD=${LINKDING_SUPERUSER_PASSWORD}
+      - LD_DB_ENGINE=postgres
+      - LD_DB_DATABASE=linkding
+      - LD_DB_USER=linkding
+      - LD_DB_PASSWORD=${LINKDING_DB_PASSWORD}
+      - LD_DB_HOST=linkding-db
+      - LD_DB_PORT=5432
+    volumes:
+      - linkding_data:/etc/linkding/data
+    networks:
+      - proxy
+      - bookmarks_db
+
+  linkding-db:
+    image: postgres:16.6-alpine
+    container_name: linkding-db
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+      - POSTGRES_DB=linkding
+      - POSTGRES_USER=linkding
+      - POSTGRES_PASSWORD=${LINKDING_DB_PASSWORD}
+    volumes:
+      - linkding_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U linkding -d linkding"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bookmarks_db
+
+volumes:
+  linkding_data:
+  linkding_db_data:
+
+networks:
+  proxy:
+    external: true
+  bookmarks_db:
+    internal: true
