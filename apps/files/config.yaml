@@ -1,0 +1,9 @@
+server:
+  port: 80
+  baseURL: "/files/"
+  database: "/database/database.db"
+  sources:
+    - path: "/srv"
+      name: "Files"
+auth:
+  adminUsername: "admin"
