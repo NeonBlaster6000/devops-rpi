@@ -11,10 +11,10 @@
 	}
 
 	redir /files /files/ 308
-	handle_path /files/* {
+	handle /files/* {
 		reverse_proxy copyparty:3923 {
 			header_up X-Forwarded-Proto https
-	}
+		}
 	}
 
 	handle {
