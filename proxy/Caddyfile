@@ -1,4 +1,8 @@
 :80 {
+	handle /monitoring* {
+		reverse_proxy grafana:3000
+	
+	}
 	redir /bookmarks /bookmarks/ 308
 	handle /bookmarks/* {
 		reverse_proxy linkding:9090 {
