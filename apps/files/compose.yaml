@@ -1,6 +1,6 @@
 services:
   filebrowser:
-    image: gtsteffaniak/filebrowser:stable
+    image: gtstef/filebrowser:stable
     container_name: filebrowser
     restart: unless-stopped
     environment:

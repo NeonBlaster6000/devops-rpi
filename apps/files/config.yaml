@@ -1,7 +1,8 @@
 server:
   port: 80
   baseURL: "/files/"
-  database: "/database/database.db"
+  database:
+    path: "/database/filebrowser.sqlite"
   sources:
     - path: "/srv"
       name: "Files"
