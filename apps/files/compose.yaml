@@ -1,21 +1,25 @@
 services:
-  filebrowser:
-    image: gtstef/filebrowser:stable
-    container_name: filebrowser
+  copyparty:
+    image: copyparty/ac:latest
+    container_name: copyparty
     restart: unless-stopped
     environment:
       - TZ=${TZ}
-      - FILEBROWSER_CONFIG=/home/filebrowser/config.yaml
+    command:
+      - -c
+      - /etc/copyparty/copyparty.conf
+      - -a
+      - admin:${COPYPARTY_PASSWORD}
     volumes:
-      - ./config.yaml:/home/filebrowser/config.yaml:ro
-      - filebrowser_data:/srv
-      - filebrowser_db:/database
+      - ./copyparty.conf:/etc/copyparty/copyparty.conf:ro
+      - copyparty_data:/w
+      - copyparty_state:/state
     networks:
       - proxy
 
 volumes:
-  filebrowser_data:
-  filebrowser_db:
+  copyparty_data:
+  copyparty_state:
 
 networks:
   proxy:

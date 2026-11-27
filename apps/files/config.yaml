@@ -1,8 +1,0 @@
-server:
-  database:
-    path: "/database/filebrowser.sqlite"
-  sources:
-    - path: "/srv"
-      name: "Files"
-auth:
-  adminUsername: "admin"
