@@ -1,4 +1,8 @@
 :80 {
+	redir /app /app/ 308
+	handle_path /app/* {
+	reverse_proxy devops-rpi-web:8000
+}
 	handle /monitoring* {
 		reverse_proxy grafana:3000
 	
