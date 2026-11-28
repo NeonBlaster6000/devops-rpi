@@ -1,0 +1,14 @@
+/home/neonblaster5000/devops-rpi/apps/web/target/debug/deps/serde-442ca3de7d1378ee.d: /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /home/neonblaster5000/devops-rpi/apps/web/target/debug/build/serde-96824d698a6afcc5/out/private.rs
+
+/home/neonblaster5000/devops-rpi/apps/web/target/debug/deps/libserde-442ca3de7d1378ee.rlib: /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /home/neonblaster5000/devops-rpi/apps/web/target/debug/build/serde-96824d698a6afcc5/out/private.rs
+
+/home/neonblaster5000/devops-rpi/apps/web/target/debug/deps/libserde-442ca3de7d1378ee.rmeta: /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /home/neonblaster5000/devops-rpi/apps/web/target/debug/build/serde-96824d698a6afcc5/out/private.rs
+
+/home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs:
+/home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs:
+/home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs:
+/home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs:
+/home/neonblaster5000/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs:
+/home/neonblaster5000/devops-rpi/apps/web/target/debug/build/serde-96824d698a6afcc5/out/private.rs:
+
+# env-dep:OUT_DIR=/home/neonblaster5000/devops-rpi/apps/web/target/debug/build/serde-96824d698a6afcc5/out

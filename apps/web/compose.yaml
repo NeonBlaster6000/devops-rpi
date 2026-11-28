@@ -1,0 +1,22 @@
+services:
+  web:
+    image: ghcr.io/neonblaster6000/devops-rpi-web:latest
+    build:
+      context: .
+      args:
+        APP_VERSION: ${APP_VERSION:-local}
+    container_name: devops-rpi-web
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    environment:
+      - PORT=8000
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
